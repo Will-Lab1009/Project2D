@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private Animator anim;
+    [SerializeField] private Vector2 boxSize;
+    [SerializeField] private float castDistance;
+    [SerializeField] private LayerMask groundLayer;
     //[SerializeField] private Joystick joystick;
     void Start()
     {
@@ -35,5 +38,22 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("runl", true);
         }
+    }
+
+    public bool isGrounded()
+    {
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position - transform.up * castDistance, boxSize);
     }
 }
