@@ -27,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce * 10), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(0, jumpForce * 10)/*, ForceMode2D.Impulse*/);
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         }
 
         if (horizontal > 0)
