@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     private bool readyToJump;
     private bool jumpedOnce;
     private bool dead;
-    private bool run;
     private int lives;
     //[SerializeField] private Joystick joystick;
     void Start()
@@ -27,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
         jumpedOnce = false;
         dead = false;
         lives = 3;
-        run = false;
     }
 
     void Update()
@@ -47,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && readyToJump)
         {
-            //rb.AddForce(new Vector2(0, jumpForce * 10)/*, ForceMode2D.Impulse*/);
             if (isGrounded())
             {
                 rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -78,14 +75,12 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("run", true);
                 anim.SetBool("runl", false);
                 anim.SetBool("jump_mid", false);
-                run = true;
             }
             else if (!isGrounded())
             {
                 anim.SetBool("run", false);
                 anim.SetBool("runl", false);
                 anim.SetBool("jump_mid", true);
-                run = false;
             }
         }
         else
@@ -99,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("jump_mid", true);
             }
-            run = false;
         }
 
         if (horizontal < 0)
@@ -109,14 +103,12 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("run", false);
                 anim.SetBool("runl", true);
                 anim.SetBool("jump_midl", false);
-                run = true;
             }
             else if (!isGrounded())
             {
                 anim.SetBool("run", false);
                 anim.SetBool("runl", false);
                 anim.SetBool("jump_midl", true);
-                run = false;
             }
         }
         else
@@ -130,7 +122,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("jump_midl", true);
             }
-            run = false;
         }
     }
 
@@ -158,11 +149,6 @@ public class PlayerMovement : MonoBehaviour
      public bool GetReady()
     {
         return readyToJump;
-    }
-
-    public bool isRunning()
-    {
-        return run;
     }
     //Anim Invoke
     private void HitRight()
@@ -209,16 +195,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Die()
     {
-        //rb.bodyType = RigidbodyType2D.Static;
         dead = true;
         if (anim.GetFloat("lastMoveX") < 0)
         {
-            //anim.SetBool("deathl", true);
             anim.SetTrigger("killl");
         }
         else if (anim.GetFloat("lastMoveX") > 0)
         {
-            //anim.SetBool("death", true);
             anim.SetTrigger("kill");
         }
     }

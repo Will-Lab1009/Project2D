@@ -6,6 +6,7 @@ public class PlayerSoundScript : MonoBehaviour
 {
     [SerializeField] private AudioSource playerHit, playerDeath, playerRun, playerJump;
     private PlayerMovement pmove;
+    private bool run;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,18 +16,27 @@ public class PlayerSoundScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pmove.isRunning())
-        {
-            playerRun.Play();
-        }
-        else
-        {
-            playerRun.Stop();
-        }
-
         if (Input.GetKeyDown(KeyCode.Space) && pmove.GetReady())
         {
             playerJump.Play();
+        }
+
+        if (Input.GetAxisRaw("Horizontal") != 0 && pmove.isGrounded())
+        {
+            run = true;
+        }
+        else
+        {
+            run = false;
+        }
+
+        if (run && !playerRun.isPlaying)
+        {
+            playerRun.Play();
+        }
+        else if(!run)
+        {
+            playerRun.Stop();
         }
     }
 

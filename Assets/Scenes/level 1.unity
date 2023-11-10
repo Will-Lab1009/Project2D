@@ -33715,6 +33715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerRun
       objectReference: {fileID: 0}
+    - target: {fileID: 5732615830782694185, guid: 9ee60eef3d4d55c479857ffc1f213667, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c07e393a3dde2049baef24a6842754f, type: 3}
     - target: {fileID: 8045725490826027959, guid: 9ee60eef3d4d55c479857ffc1f213667, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
