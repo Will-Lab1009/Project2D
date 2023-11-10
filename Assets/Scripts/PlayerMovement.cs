@@ -13,9 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 boxSize;
     [SerializeField] private float castDistance;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private PlayerSoundScript pss;
     private bool readyToJump;
     private bool jumpedOnce;
     private bool dead;
+    private bool run;
     private int lives;
     //[SerializeField] private Joystick joystick;
     void Start()
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         jumpedOnce = false;
         dead = false;
         lives = 3;
+        run = false;
     }
 
     void Update()
@@ -75,12 +78,14 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("run", true);
                 anim.SetBool("runl", false);
                 anim.SetBool("jump_mid", false);
+                run = true;
             }
             else if (!isGrounded())
             {
                 anim.SetBool("run", false);
                 anim.SetBool("runl", false);
                 anim.SetBool("jump_mid", true);
+                run = false;
             }
         }
         else
@@ -94,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("jump_mid", true);
             }
+            run = false;
         }
 
         if (horizontal < 0)
@@ -103,12 +109,14 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("run", false);
                 anim.SetBool("runl", true);
                 anim.SetBool("jump_midl", false);
+                run = true;
             }
             else if (!isGrounded())
             {
                 anim.SetBool("run", false);
                 anim.SetBool("runl", false);
                 anim.SetBool("jump_midl", true);
+                run = false;
             }
         }
         else
@@ -122,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("jump_midl", true);
             }
+            run = false;
         }
     }
 
@@ -141,7 +150,20 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDistance, boxSize);
     }
-    
+
+    public int GetLives()
+    {
+        return lives;
+    }
+     public bool GetReady()
+    {
+        return readyToJump;
+    }
+
+    public bool isRunning()
+    {
+        return run;
+    }
     //Anim Invoke
     private void HitRight()
     {
