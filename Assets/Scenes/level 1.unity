@@ -15245,7 +15245,7 @@ GameObject:
   - component: {fileID: 1593220763}
   - component: {fileID: 1593220762}
   - component: {fileID: 1593220764}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piso
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -32440,14 +32440,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28014ddc1b98a24e8a1b2037abdde3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  jumpForce: 0
-  anim: {fileID: 0}
+  speed: 5
+  jumpForce: 4
+  anim: {fileID: 863826661528217686}
   boxSize: {x: 0.48, y: 0.11}
   castDistance: 0.42
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+--- !u!95 &863826661528217686 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6111299449711986699, guid: af4278ef2d79e3c40a30b559936afbe4, type: 3}
+  m_PrefabInstance: {fileID: 863826661528217683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

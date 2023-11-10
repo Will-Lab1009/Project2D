@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
         //vertical = Input.GetAxisRaw("Vertical");
         transform.Translate(horizontal * speed * Time.deltaTime, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(rb.velocity.y) < 0.0001f)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce * 10), ForceMode2D.Impulse);
         }
 
         if (horizontal > 0)
