@@ -33006,9 +33006,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1747017157097661630, guid: af4278ef2d79e3c40a30b559936afbe4, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2480681923927058239, guid: af4278ef2d79e3c40a30b559936afbe4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.51
+      value: -4.75
       objectReference: {fileID: 0}
     - target: {fileID: 2480681923927058239, guid: af4278ef2d79e3c40a30b559936afbe4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -33092,7 +33096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 4
+  jumpForce: 5
   anim: {fileID: 863826661528217686}
   boxSize: {x: 0.48, y: 0.11}
   castDistance: 0.42
