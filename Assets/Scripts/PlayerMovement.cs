@@ -15,18 +15,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     private bool readyToJump;
     private bool jumpedOnce;
+    private bool dead;
+    private int lives;
     //[SerializeField] private Joystick joystick;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         readyToJump = true;
         jumpedOnce = false;
+        dead = false;
+        lives = 3;
     }
 
     void Update()
     {
         //Move
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if (!dead)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
+        else if (dead)
+        {
+            horizontal = 0;
+            rb.bodyType = RigidbodyType2D.Static;
+        }
         vertical = Input.GetAxisRaw("Vertical");
         transform.Translate(horizontal * speed * Time.deltaTime, 0, 0);
 
@@ -150,9 +162,42 @@ public class PlayerMovement : MonoBehaviour
             jumpedOnce = false;
         }
         
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            //
+            if (lives > 1)
+            {
+                lives -= 1;
+                if (anim.GetFloat("lastMoveX") < 0)
+                {
+                    anim.SetBool("hitl", true);
+                    Invoke("HitLeft", 0.5f);
+                }
+                else if (anim.GetFloat("lastMoveX") > 0)
+                {
+                    anim.SetBool("hit", true);
+                    Invoke("HitRight", 0.5f);
+                }
+            }else if(lives == 1)
+            {
+                lives -= 1;
+                Die();
+            }
+        }
+    }
+
+    private void Die()
+    {
+        //rb.bodyType = RigidbodyType2D.Static;
+        dead = true;
+        if (anim.GetFloat("lastMoveX") < 0)
+        {
+            //anim.SetBool("deathl", true);
+            anim.SetTrigger("killl");
+        }
+        else if (anim.GetFloat("lastMoveX") > 0)
+        {
+            //anim.SetBool("death", true);
+            anim.SetTrigger("kill");
         }
     }
 }

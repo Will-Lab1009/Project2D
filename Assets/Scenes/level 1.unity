@@ -220,6 +220,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyWizard
       objectReference: {fileID: 0}
+    - target: {fileID: 4787881395923460288, guid: 417a3b26063cb8b4daf540fd03ac09a2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236350751996099676, guid: 417a3b26063cb8b4daf540fd03ac09a2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -767,6 +775,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFlyPatrol
       objectReference: {fileID: 0}
+    - target: {fileID: 3775692378376135791, guid: 4b2df9b56696b9347b079e8e8dca28c5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598949002934853874, guid: 4b2df9b56696b9347b079e8e8dca28c5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456324987522894421, guid: 4b2df9b56696b9347b079e8e8dca28c5, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -896,6 +916,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 27567542115814470, guid: c32fb1fc780bae447be0f6483c0c313a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945391980488372261, guid: c32fb1fc780bae447be0f6483c0c313a, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6866175236746227592, guid: c32fb1fc780bae447be0f6483c0c313a, type: 3}
@@ -29265,6 +29289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireball
       objectReference: {fileID: 0}
+    - target: {fileID: 2751639343903628751, guid: 2b6d531df20842049bedfbde3d164edc, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6753236187338634138, guid: 2b6d531df20842049bedfbde3d164edc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -29304,6 +29332,10 @@ PrefabInstance:
     - target: {fileID: 6753236187338634138, guid: 2b6d531df20842049bedfbde3d164edc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943365916661354902, guid: 2b6d531df20842049bedfbde3d164edc, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29380,6 +29412,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1219271240722759285, guid: 8e10e4dcfee810a4888b1b5fe0800d34, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6898582699304784414, guid: 8e10e4dcfee810a4888b1b5fe0800d34, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.06
@@ -29420,9 +29456,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7186630250150969981, guid: 8e10e4dcfee810a4888b1b5fe0800d34, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8360730750627467320, guid: 8e10e4dcfee810a4888b1b5fe0800d34, type: 3}
       propertyPath: m_Name
       value: EnemyFlyAngel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150279707572117928, guid: 8e10e4dcfee810a4888b1b5fe0800d34, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29480,6 +29524,18 @@ PrefabInstance:
     - target: {fileID: 3140598676287758782, guid: 17a6cf29b8ad31c4391ec726b8a285c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408656380755875262, guid: 17a6cf29b8ad31c4391ec726b8a285c7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6280718519147767651, guid: 17a6cf29b8ad31c4391ec726b8a285c7, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311705036109558566, guid: 17a6cf29b8ad31c4391ec726b8a285c7, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
