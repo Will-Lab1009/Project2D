@@ -30,28 +30,23 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         transform.Translate(horizontal * speed * Time.deltaTime, 0, 0);
 
-        rb.velocity = new Vector2(horizontal, vertical) * speed * Time.deltaTime;
-
-        anim.SetFloat("moveX", rb.velocity.x);
-        
-        //Jump
         if (Input.GetKeyDown(KeyCode.Space) && readyToJump)
         {
             //rb.AddForce(new Vector2(0, jumpForce * 10)/*, ForceMode2D.Impulse*/);
             if (isGrounded())
             {
                 rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-                //jumpedOnce = true;
+                jumpedOnce = true;
 
             }
-            /*else if (!isGrounded())
+            else if (!isGrounded())
             {
                 if (jumpedOnce)
                 {
                     rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
                     readyToJump = false;
                 }
-            }*/
+            }
         }
 
         //Idle Anim
@@ -66,38 +61,55 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded())
             {
                 anim.SetBool("run", true);
-                anim.SetBool("jump_start", false);
+                anim.SetBool("runl", false);
                 anim.SetBool("jump_mid", false);
             }
-            /*else if (!isGrounded())
+            else if (!isGrounded())
             {
                 anim.SetBool("run", false);
-                anim.SetBool("jump_start", true);
-                Invoke("JumpAnimRight", 0.01f);
-            }*/
+                anim.SetBool("runl", false);
+                anim.SetBool("jump_mid", true);
+            }
         }
         else
         {
             anim.SetBool("run", false);
+            if (isGrounded())
+            {
+                anim.SetBool("jump_mid", false);
+            }
+            else if (!isGrounded() && anim.GetFloat("lastMoveX") > 0)
+            {
+                anim.SetBool("jump_mid", true);
+            }
         }
+
         if (horizontal < 0)
         {
             if (isGrounded())
             {
+                anim.SetBool("run", false);
                 anim.SetBool("runl", true);
-                anim.SetBool("jump_startl", false);
                 anim.SetBool("jump_midl", false);
             }
-            /*else if (!isGrounded())
+            else if (!isGrounded())
             {
+                anim.SetBool("run", false);
                 anim.SetBool("runl", false);
-                anim.SetBool("jump_startl", true);
-                Invoke("JumpAnimLeft", 0.01f);
-            }*/
+                anim.SetBool("jump_midl", true);
+            }
         }
         else
         {
             anim.SetBool("runl", false);
+            if (isGrounded())
+            {
+                anim.SetBool("jump_midl", false);
+            }
+            else if (!isGrounded() && anim.GetFloat("lastMoveX") < 0)
+            {
+                anim.SetBool("jump_midl", true);
+            }
         }
     }
 
@@ -127,18 +139,6 @@ public class PlayerMovement : MonoBehaviour
     private void HitLeft()
     {
         anim.SetBool("hitl", false);
-    }
-
-    private void JumpAnimRight()
-    {
-        anim.SetBool("jump_start", false);
-        anim.SetBool("jump_mid", true);
-    }
-
-    private void JumpAnimLeft()
-    {
-        anim.SetBool("jump_startl", false);
-        anim.SetBool("jump_midl", true);
     }
 
     //Collision
