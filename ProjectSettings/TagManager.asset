@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Goal
   - Abyss
+  - Platform
   layers:
   - Default
   - TransparentFX

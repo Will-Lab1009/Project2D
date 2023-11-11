@@ -170,7 +170,16 @@ public class PlayerMovement : MonoBehaviour
 
     //Collision
     private void OnCollisionEnter2D(Collision2D collision)
+
     {
+        if (collision.gameObject.tag == "Platform")
+        {
+            transform.parent = collision.transform;
+            readyToJump = true;
+            jumpedOnce = false;
+        }
+
+
         if (collision.gameObject.tag == "ground")
         {
             readyToJump = true;
@@ -247,5 +256,18 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+ 
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            transform.parent = null;
+        }
+
+
+
+    }
 
 }
