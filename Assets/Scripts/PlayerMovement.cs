@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpedOnce;
     private bool dead;
     private int lives;
-    //[SerializeField] private Joystick joystick;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,9 +34,9 @@ public class PlayerMovement : MonoBehaviour
         if (!dead)
         {
             //teclado
-            //horizontal = Input.GetAxisRaw("Horizontal");
+            horizontal = Input.GetAxisRaw("Horizontal");
             //joystick
-            horizontal = joystick.Horizontal;
+           horizontal = joystick.Horizontal;
         }
         else if (dead)
         {
@@ -45,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
         }
         //teclado
-        // vertical = Input.GetAxisRaw("Vertical");
+        vertical = Input.GetAxisRaw("Vertical");
         //joystick
         vertical = joystick.Vertical;
         transform.Translate(horizontal * speed * Time.deltaTime, 0, 0);

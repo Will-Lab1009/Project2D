@@ -7,6 +7,7 @@ public class PlayerSoundScript : MonoBehaviour
     [SerializeField] private AudioSource playerHit, playerDeath, playerRun, playerJump;
     private PlayerMovement pmove;
     private bool run;
+    [SerializeField] private Joystick joystick;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class PlayerSoundScript : MonoBehaviour
             playerJump.Play();
         }
 
-        if (Input.GetAxisRaw("Horizontal") != 0 && pmove.isGrounded())
+        if (Input.GetAxisRaw("Horizontal") != 0 && pmove.isGrounded() || joystick.Horizontal != 0 && pmove.isGrounded())
         {
             run = true;
         }
@@ -54,4 +55,14 @@ public class PlayerSoundScript : MonoBehaviour
             }
         }
     }
+
+
+    public void JumpButtonSound()
+    {
+        if (pmove.GetReady())
+        {
+            playerJump.Play();
+        }
+    }
+
 }
