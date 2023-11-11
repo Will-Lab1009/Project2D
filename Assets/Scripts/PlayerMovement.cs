@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 boxSize;
     [SerializeField] private float castDistance;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private PlayerSoundScript pss;
     [SerializeField] private Joystick joystick;
     private bool readyToJump;
     private bool jumpedOnce;
@@ -37,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             //teclado
             horizontal = Input.GetAxisRaw("Horizontal");
             //joystick
-           horizontal = joystick.Horizontal;
+            horizontal = joystick.Horizontal;
         }
         else if (dead)
         {
