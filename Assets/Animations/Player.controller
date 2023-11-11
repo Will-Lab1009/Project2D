@@ -44,7 +44,7 @@ AnimatorStateMachine:
     m_Position: {x: -60, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5525893459276874593}
-    m_Position: {x: -60, y: -40, z: 0}
+    m_Position: {x: 10, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9074505751985595895}
     m_Position: {x: 1080, y: -470, z: 0}
@@ -65,7 +65,7 @@ AnimatorStateMachine:
     m_Position: {x: 610, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3220425660637499760}
-    m_Position: {x: -60, y: 220, z: 0}
+    m_Position: {x: 0, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5100725772903321360}
     m_Position: {x: 330, y: 320, z: 0}
@@ -258,6 +258,7 @@ AnimatorState:
   - {fileID: 554321363514414128}
   - {fileID: -2112927467211530904}
   - {fileID: 5258139193957864286}
+  - {fileID: 5771052590760662991}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -777,6 +778,7 @@ AnimatorState:
   - {fileID: 4378638390784747489}
   - {fileID: -2797767637967664504}
   - {fileID: -805080379209137126}
+  - {fileID: 4994105948083159975}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -874,6 +876,34 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &4994105948083159975
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: run
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: runl
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -5525893459276874593}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.516129
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &5258139193957864286
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -887,6 +917,34 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7135037014777291270}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.516129
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &5771052590760662991
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: runl
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: run
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 3220425660637499760}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
