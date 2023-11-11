@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             //teclado
             horizontal = Input.GetAxisRaw("Horizontal");
             //joystick
-            horizontal = joystick.Horizontal;
+            //horizontal = joystick.Horizontal;
         }
         else if (dead)
         {
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         //teclado
         vertical = Input.GetAxisRaw("Vertical");
         //joystick
-        vertical = joystick.Vertical;
+       // vertical = joystick.Vertical;
         transform.Translate(horizontal * speed * Time.deltaTime, 0, 0);
 
         if (Input.GetKeyDown(KeyCode.Space) && readyToJump)
