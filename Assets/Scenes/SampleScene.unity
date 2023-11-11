@@ -25271,6 +25271,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4816041916703690731, guid: be5ced8aa5c5e95439b0234296996e9f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.8352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816041916703690731, guid: be5ced8aa5c5e95439b0234296996e9f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.77254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816041916703690731, guid: be5ced8aa5c5e95439b0234296996e9f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.21960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816041916703690731, guid: be5ced8aa5c5e95439b0234296996e9f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281935654
+      objectReference: {fileID: 0}
     - target: {fileID: 6789321187487239374, guid: be5ced8aa5c5e95439b0234296996e9f, type: 3}
       propertyPath: m_Name
       value: ScoreText

@@ -7,6 +7,7 @@ using TMPro;
 public class ItemCollection : MonoBehaviour
 {
     private int currentScore = 0;
+    private GameObject[] allCollectibles;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private AudioSource diamondCollectAudio;
 
@@ -14,12 +15,19 @@ public class ItemCollection : MonoBehaviour
     void Start()
     {
         scoreText.text = "00000";
+
+        allCollectibles = GameObject.FindGameObjectsWithTag("Collectible");
+        PlayerPrefs.SetInt("TotalDiamonds", allCollectibles.Length);
+        PlayerPrefs.Save();
     }
 
     // Update is called once per frame
     void Update()
     {
         scoreText.text = currentScore.ToString("D5");
+
+        PlayerPrefs.SetInt("CollectedDiamonds", currentScore);
+        PlayerPrefs.Save();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +37,11 @@ public class ItemCollection : MonoBehaviour
             diamondCollectAudio.Play();
             Destroy(collision.gameObject);
             currentScore++;
+        }
+
+        if (collision.gameObject.tag == "Goal")
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }
