@@ -717,6 +717,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: lastMoveX
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: run
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: runl
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8866444207830990170}
   m_Solo: 0
@@ -821,6 +827,12 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: lastMoveX
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: runl
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: run
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7592574088449940377}
