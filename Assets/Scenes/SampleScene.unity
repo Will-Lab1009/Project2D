@@ -26290,7 +26290,7 @@ GameObject:
   - component: {fileID: 796653517}
   m_Layer: 0
   m_Name: PlatafomaMovimiento 3
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31433,7 +31433,7 @@ GameObject:
   - component: {fileID: 1065966901}
   m_Layer: 0
   m_Name: PlatafomaMovimiento (1)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64493,7 +64493,7 @@ GameObject:
   - component: {fileID: 1205842917}
   m_Layer: 0
   m_Name: PlatafomaMovimiento 2
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67755,7 +67755,7 @@ GameObject:
   - component: {fileID: 1380145693}
   m_Layer: 0
   m_Name: PlatafomaMovimiento
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
