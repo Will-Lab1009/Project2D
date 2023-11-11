@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         jumpedOnce = false;
         dead = false;
         lives = 3;
+        UIManejador.Instance.AgregarVidas(lives);
     }
 
     void Update()
@@ -181,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
             if (lives > 1)
             {
                 lives -= 1;
+                UIManejador.Instance.QuitarVidas();
                 if (anim.GetFloat("lastMoveX") < 0)
                 {
                     anim.SetBool("hitl", true);
@@ -194,6 +196,7 @@ public class PlayerMovement : MonoBehaviour
             }else if(lives == 1)
             {
                 lives -= 1;
+                UIManejador.Instance.QuitarVidas();
                 Die();
                 StartCoroutine(WaitForSceneLoad());
             }
