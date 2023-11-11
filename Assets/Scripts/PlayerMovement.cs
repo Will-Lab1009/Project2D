@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -195,6 +196,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 lives -= 1;
                 Die();
+                StartCoroutine(WaitForSceneLoad());
             }
         }
     }
@@ -236,7 +238,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    private IEnumerator WaitForSceneLoad()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(3);
 
+    }
 
 
 }
