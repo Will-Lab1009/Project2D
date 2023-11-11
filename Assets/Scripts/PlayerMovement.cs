@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float castDistance;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private PlayerSoundScript pss;
+    [SerializeField] private Joystick joystick;
     private bool readyToJump;
     private bool jumpedOnce;
     private bool dead;
@@ -33,14 +34,20 @@ public class PlayerMovement : MonoBehaviour
         //Move
         if (!dead)
         {
-            horizontal = Input.GetAxisRaw("Horizontal");
+            //teclado
+            //horizontal = Input.GetAxisRaw("Horizontal");
+            //joystick
+            horizontal = joystick.Horizontal;
         }
         else if (dead)
         {
             horizontal = 0;
             rb.bodyType = RigidbodyType2D.Static;
         }
-        vertical = Input.GetAxisRaw("Vertical");
+        //teclado
+        // vertical = Input.GetAxisRaw("Vertical");
+        //joystick
+        vertical = joystick.Vertical;
         transform.Translate(horizontal * speed * Time.deltaTime, 0, 0);
 
         if (Input.GetKeyDown(KeyCode.Space) && readyToJump)
@@ -205,4 +212,32 @@ public class PlayerMovement : MonoBehaviour
             anim.SetTrigger("kill");
         }
     }
+
+
+
+    public void JumpButton()
+    {
+        if (readyToJump)
+        {
+            if (isGrounded())
+            {
+                rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                jumpedOnce = true;
+
+            }
+            else if (!isGrounded())
+            {
+                if (jumpedOnce)
+                {
+                    rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                    readyToJump = false;
+                }
+            }
+        }
+    }
+
+
+
+
+
 }
