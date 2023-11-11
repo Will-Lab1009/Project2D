@@ -43,5 +43,10 @@ public class ItemCollection : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+
+        if (collision.gameObject.tag == "Abyss")
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }
